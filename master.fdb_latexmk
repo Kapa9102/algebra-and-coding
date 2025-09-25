@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758786903.38413 "master.tex" "master.pdf" "master" 1758786904.32079 2
+["pdflatex"] 1758789109.6189 "master.tex" "master.pdf" "master" 1758789110.67796 2
   "/etc/texmf/web2c/texmf.cnf" 1757086197.48843 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/kapa/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1758698093.85721 11524 0d9650ccb502a4995f4ba9254046fd03 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -166,9 +166,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1707919699 40399 f2c302f7d2af602abb742093540a5834 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757086212.83101 128028 f533b797fba58d231669ea19e894e23e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757086245 6800793 f42fb8a68cdf81fb585a716476a7e8a3 ""
-  "master.aux" 1758786904.21642 245 5ed37c85603edb827704c8b842e9ce20 "pdflatex"
+  "master.aux" 1758789110.59769 321 35f477fb8e8306acecd2da224bf218fe "pdflatex"
   "master.tex" 1758784250.92243 125 ee580c4e4e1c95d076372bcfc789ebb2 ""
-  "source/lec1.tex" 1758786902.73242 4360 956aa3faa8d9616af6f6ef49ea83bd55 ""
+  "source/lec1.tex" 1758788990.95014 7126 ec8f2ffb3c8fac81c651707c3fca3f03 ""
   "template.tex" 1758784213.29234 13882 8a987b3cfc3faddc4f7291c6ee39c121 ""
   (generated)
   "master.aux"

@@ -149,4 +149,106 @@ x^{-1} \cdot  x^{-1} \cdot \cdot \cdot x^{-1}
 \end{cases}
 \]
 \end{proof}
+\underline{\empth{Notation}}: if $H $ is a Subgroup of $G $, 
+we denote 
+\[
+H \leq G
+\]
+if $H \leq  G$ with $H \neq G $, we call $H $ a proper Subgroup of $G $ and we write $H < G$   \\
+\exercise
+Let $(G, \cdot )  $ be a group, then the set:
+\[
+Z(G) = \left\{ x \in  G: \quad  gx = xg , \forall g \in  G \right\} 
+\]
+\begin{enumerate}
+  \item Prove that $Z(G) = G\iff G \text{ is an abelian group.} $ 
+\end{enumerate}
+\begin{proof}
+  \begin{enumerate}
+  \item 
+\[
+( \implies ) 
+\]
+Suppose that $G $ is an Abelian Group. \\
+Let $x \in  G $ and let $g \in G $, since $G $ is an Abelian group, then $gx = xg $. then $x \in  Z(G)$,
+then $Z(G) = G$
+\[
+ ( \impliedby  ) 
+\]
+Suppose that $Z(G) = G$, let $x,y \in  G$. then $x,y \in Z(G)$. so $\forall g \in G$ :
+\[
+\begin{cases}
+xg = gx \\
+yg = gy
+\end{cases}
+\]
+so for $g = y$, we get $xy = yx $ so $G $ is an abelian group 
+\item 
+  Let $G \leq (\mathbb{Z}, +)  $.  
+  \begin{itemize}
+    \item       if $G = \left\{ 0 \right\} $. then $G = 0 \mathbb{Z} $. 
+      \item
+  if $G \neq \left\{ 0 \right\} $, then $\exists m \in G $ with $m \neq 0$, without loss of generality.
+  suppose $m > 0$, so $G \cap  \NN \neq  \emptyset $, so $n = \min G \cap \mathbb{N} $ , let $x \in  n \mathbb{Z} $.
+  then $x = kn, k \in  \ZZ$, so $x \in  G $. hence $n \mathbb{Z} \subset G $. \\
+  Let $x \in  G $, so $\exists q,r \in  \mathbb{Z}$, $0 \leq r \leq  n-1$ such that 
+  $x = qn + r $. so $r = x - qn \in  G $, if $r \neq  0 $ then : 
+  \[
+  \begin{cases}
+  r < n \\
+  r = G \cap \NN
+  \end{cases} \implies 
+  \begin{cases}
+  r < n \\
+  n = \min  G \cap \NN \leq r, \quad \text{ is a contradiction } 
+  \end{cases}
+  \]
+  so $x = qn \in  n \mathbb{Z} $, so $G \subset n \mathbb{Z}$ 
+  \end{itemize}
+  \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+  Let $H, K \leq G $, with $G $ is a group. then: 
+  \[
+  H \cap K \leq G
+  \]
+\end{proposition}
+  \begin{proof}
+    Since $e \in H $ and $e \in  K$, then $e \in  H \cap K \neq  \emptyset $. \\
+    Let $x,y \in  H \cap K $, then : 
+    \[
+    \begin{cases}
+    x,y \in  H \\
+    x,y \in  K
+    \end{cases} \implies 
+    \begin{cases}
+    x^{-1}, y \in  H \\
+    x^{-1}, y \in  K \\
+    \end{cases}
+    \implies  
+    \begin{cases}
+    x^{-1} \cdot y \in H \\
+    x^{-1} \cdot y \in K
+    \end{cases}
+    \implies x^{-1} \cdot y \in H \cap K
+    \]
+  \end{proof}
+ \begin{proposition}
+   Let $\left\{ H_{i} \right\}_{i \in  I} $ be a family of Subgroup of a group $G $, then : 
+   \[
+     \bigcap_{i \in  I}^{} H_{i} \leq G
+   \]
+ \end{proposition}
+
+ \underline{\empth{Remark}}: $H \cup K $ is not always a Subgroup of $G $.
+ \begin{proposition}
+   Let $H, K \leq G$, Then $H \cup K \leq G \iff  \begin{cases}
+   H \subset K \\
+   K \subset H
+   \end{cases}$  
+ \end{proposition}
+ 
+ 
+
 % end of file
