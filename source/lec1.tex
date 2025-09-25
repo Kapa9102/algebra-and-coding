@@ -1,0 +1,152 @@
+% lec1.tex 
+\lecture{1}{08:10 AM Thu, Sep 25 2025}{General Overview} 
+\section{Introduction}
+Let $E \neq \emptyset  $ a set. \\
+A binary operation $\cdot  $ on $E $ is any map from 
+$E \times E  $ into $E $,
+\[
+\begin{array}{cccc}
+  ( \cdot )  : &  E \times E   & \longrightarrow & E \\
+
+           &  (x,y)   & \longmapsto     & x \cdot y \\ 
+\end{array}
+\]
+Let $A \subset E $, we say $A $ is a stable by $(\cdot)  $if $(\cdot)$ is also a Binary Operation 
+on $A$,
+\[
+\begin{array}{cccc}
+  (\cdot _{A}) : &  A \times A   & \longrightarrow & A \\
+
+           &  (x, y)   & \longmapsto     &  x \cdot _{A} y = x \cdot y\\ 
+\end{array}
+\]
+
+\begin{definition}[Group]
+Let $G \neq \emptyset  $ a set with a Binary Operation $(*)$, we say that 
+$G $ is a group if : 
+\begin{enumerate}
+\item $(*)$ is associative, if : 
+  \[
+  \forall x,y,z \in  G: \quad (x * y ) * z  = x * (y * z) 
+  \]
+  \item $(*)  $   admits a netural elements  if :
+    \[
+      \exists e \in  G, \forall x \in G: \quad 
+      x * e = e * x = x
+    \]
+    \item \[
+    \forall x \in  G, \exists x' \in G: \quad  x * x' = 
+    x' * x = e
+    \]
+\end{enumerate}
+if $(*)$ is commutative i.e.:
+\[
+\forall x,y \in  G: \quad x * y = y * x
+\]
+then $G $ is called an Abelian Group. \\
+\end{definition}
+\underline{\emph{Notation:}} We denote $(*) $ by $(\cdot)$  if its multiplicative,
+and $(+) $ if its additive.
+\begin{proposition}
+  Let $(G, \cdot )  $ be a group. then:
+  \begin{enumerate}
+  \item The Neutral Element is uniuqe.
+    \item The inverse is unique
+      \item \[
+      \forall x, y \in  G: \quad (x \cdot  y)^{-1} = y^{-1} \cdot x^{-1}
+      \]
+      \item 
+        \[
+        \forall x,y,z \in  G: \quad 
+        \begin{cases}
+        xy = xz \\
+        yx = zx
+        \end{cases} 
+        \implies 
+        \begin{cases}
+          y = z \\
+          y = z
+        \end{cases}
+        \]
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Let $e_1, e_2 \in G $ be a Neutral Element, then: 
+  \[
+    e_1 = e_1 \cdot e_2 = e_2
+  \]
+\item 
+  let $x \in  G $ and $x_1, x_2 \in  G $ be its inverses, then:
+  \[
+  x_1 = x_1 \cdot  e = x_1 \cdot  (x \cdot  x_2)  = (x_1 \cdot  x) \cdot  x_2 = e \cdot  x_2 = x_2 
+  \]
+ \item Let $x, y' \in G $. then:
+   \begin{align*}
+     (x \cdot y)  \cdot (x \cdot  y) ^{-1} = e & \implies 
+     y \cdot (x \cdot y) ^{-1} = x^{-1} \\
+                                               & \implies 
+                                               (x \cdot  y) ^{-1} = y^{-1} \cdot x^{-1}
+   \end{align*}
+\end{enumerate}
+\end{proof}
+\exercise Let $(G, \cdot )  $ be a group and $x_1, x_2, \hdots , x_{n} \in G $. then: 
+\begin{itemize}
+\item  $(x_1 \cdot \cdot  \cdot x_{n}) ^{-1} = x_{n}^{-1} \cdot \cdot \cdot x_1^{-1}$
+\item  $(x_1^{-1}) ^{-1} = x_1$
+\end{itemize}
+
+\begin{definition}[]
+Let $(G, \cdot )  $  be a group, $n \in \mathbb{Z} $ and $x \in  G $, define 
+\[
+x^n = \begin{cases}
+x \cdot x \cdot \cdot \cdot x 
+\\
+e\\
+x^{-1} \cdot  x^{-1} \cdot \cdot \cdot x^{-1}
+\end{cases}
+\implies 
+\begin{cases}
+\text{ if } n \geq 1 \\
+\text{ if } n = 0 \\
+\text{ if } n \leq -1
+\end{cases}
+\]
+\end{definition}
+\begin{example}
+\begin{enumerate}
+\item $(Z, +), (\mathbb{Q}^{*}, \cdot ), (\RR , +), (\CC^{*}, \cdot)$ 
+ \item The set $\mathcal{F} (\RR , \RR )  $  with addition of maps is an Abelian Group, with the null map
+   as Neutral Element
+  \item The set $S_{n} $ of all bijection of $\left\{ 1, \hdots , n \right\} $  with composition 
+    of maps is a group 
+\end{enumerate}
+\end{example}
+\begin{definition}[Sub Group]
+  Let $(G, \cdot )$ be a group and $H \subset G$ we say that $H $ is a Subgroup of $G $  if 
+  $(H, \cdot )  $ is a gorup
+\end{definition}
+
+\begin{proposition}
+  
+  Let $(G, \cdot )  $  a group and $H \subset G $. then $H $ is a Subgroup of $G $ if and only if:
+  \begin{enumerate}
+  \item $H \neq \emptyset  $ 
+    \item $ \forall x,y \in  H: \quad x \cdot  y \in  H $  
+      \item $\forall x \in  H: \quad x^{-1} \in  H $  
+  \end{enumerate}
+\end{proposition}
+\underline{\empth{Remark}}: The conditions $(2)  $  and $(3)  $ are equivalent to:
+\[
+\forall x,y \in H: \quad x^{-1} \cdot  y \in  H 
+\]
+\begin{proof}
+\[
+\forall x,y \in H: \quad x^{-1}\cdot y \in  H \implies 
+\begin{cases}
+\forall x,y \in  H: \quad x \cdot  y \in  H \\
+\forall x \in  H: \quad x^{-1} \in  H
+\end{cases}
+\]
+\end{proof}
+% end of file
