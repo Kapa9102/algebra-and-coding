@@ -1,0 +1,261 @@
+% lec2.tex 
+\lecture{2}{08:17 AM Thu, Oct 02 2025}{} 
+
+\begin{definition}[]
+Let $G $ be a group and $A \subset G $, The group spanned by $A $ is the intersection of all 
+$SG $ of $G $ containing $A $, i.e.: 
+\[
+\left\langle A \right\rangle  = 
+\bigcap_{H \leq G, A \subset H}^{}  H
+\]
+\end{definition}
+\begin{proposition}[]
+$\left\langle A \right\rangle  $ is the smallest $SG $ of $G $ containing $A $ 
+\end{proposition}
+\begin{proof}
+$ \left\langle A \right\rangle \leq G $ 
+\[
+\begin{cases}
+e \in  H, \forall H \leq G \implies 
+\bigcap_{H \leq G}^{} H \neq \emptyset  \\
+\forall x,y \in  \left\langle A \right\rangle:  \quad 
+x,y \in H, \forall H \leq G \text{ and } A \subset H
+\end{cases}
+\]
+so $xy^{-1} \in H, \forall H \leq G $ and $A \subset H $ \\
+so $xy^{-1}\in \bigcap_{H \leq G, A \subset H}^{}  H$ \\
+Let $B \leq G $ such that $A \subset B$. \\
+since 
+\[
+\bigcap_{H \leq G, A \subset G}^{} H \subset B, \quad 
+\text{ so } \left\langle A \right\rangle  \subset B
+\]
+so $\left\langle A \right\rangle  $ is the smallest $SG$ of $G $ containing $A$   
+\end{proof}
+\begin{proposition}[]
+Let $G $ be a group and $A \subset G $ such that $A \neq \emptyset  $. Then: 
+\[
+\left\langle A \right\rangle  := 
+\left\{ 
+  x_1^{k_1} x_2^{k_2} \hdots x_n ^{k_n }: \quad 
+  n \in  \NN, x_{i} \in A, k_{i} = \pm 1, i \in 
+  \left\{ 
+    1, \hdots , n
+  \right\}
+\right\}
+\]
+In particular if $A = \left\{ a \right\} $. then by definition: 
+\[
+\left\langle A \right\rangle  = 
+\left\langle a \right\rangle  = 
+\left\{ a ^{k}: \quad k \in  \mathbb{Z} \right\}
+\]
+\end{proposition}
+\begin{definition}[]
+Let $G $ be a group and $A \subset G $, we say:
+\begin{enumerate}
+\item $A $ span $G $ if $G = \left\langle A \right\rangle  $ 
+  \item $G $ is of finite type if $G = \left\langle A \right\rangle  $   and 
+    $A $ is finite.
+    \item $G $ is cyclic if $G = \left\langle a \right\rangle , a \in G$  
+      \item $G $ is a finite group if $\left| G \right|<  \infty  $, in this case we call  
+        $\left| G \right| $ the order of $G $. 
+        \item The order of $x \in G $ is $\left| \left\langle x \right\rangle  \right| $ 
+\end{enumerate}
+\end{definition}
+\begin{example}
+\begin{enumerate}
+\item $(\mathbb{Z}, +)  $ is cyclic. Indeed, $\mathbb{Z} = \left\langle 1 \right\rangle  = 
+  \left\{ n \cdot 1: \quad n \in \mathbb{Z} \right\}$ or with $-1$. 
+  \item $\left( n \mathbb{Z}, + \right) $  is cyclic. Since $n \mathbb{Z} =\left\langle n \right\rangle  = 
+    \left\{ k \cdot n: \quad k \in \mathbb{Z} \right\}$ 
+    \item $\left( 
+        \frac{\mathbb{Z}}{6 \ZZ}, +
+      \right) $ is cyclic. Since 
+      \begin{align*}
+      \frac{\mathbb{Z}}{6 \mathbb{Z}} &= 
+      \left\langle 
+        \overline{1}
+      \right\rangle = 
+      \left\{ n \cdot  \overline{1}: \quad n \in \left\{ 0, 1, \hdots , 5 \right\} \right\} \\
+                                      &= 
+                    \left\langle \overline{5} \right\rangle  = 
+                    \left\{ n \cdot \overline{5}: \quad n \in  \left\{ 0, 1, \hdots , 5 \right\} \right\}
+      \end{align*}
+\end{enumerate}
+\end{example}
+\begin{proposition}[]
+Any cylic group is Abelian.
+\end{proposition}
+\begin{proof}
+Let $G = \left\langle a \right\rangle = \left\{ a ^{k}: \quad k \in \mathbb{Z} \right\} $, we 
+define: 
+\[
+HK = \left\{ hk: \quad h \in  H, k \in  K \right\}
+\]
+\end{proof}
+\divider
+\begin{center}
+ \textcolor{purple}{\underline{\textsc{Product of SG:}}} 
+\end{center}
+Let $G $ be a group and $H, K \leq G $, we define 
+\[
+HK = 
+\left\{ hk: \quad h \in H, k \in K \right\}
+\]
+\underline{\emph{Remark: }} $H, K \subset HK $ 
+\begin{proposition}[]
+\[
+HK \leq G \implies 
+HK = KH
+\]
+\end{proposition}
+\begin{proof}
+$( \implies )$ since $HK \leq G $, then $HK \neq  \emptyset $,
+let $x \in HK $. So $x = hk$ where $h, k \in H, K$. since it's a subgroup then, $x^{-1} = k^{-1} h^{-1} \in HK$, 
+so $HK \subset KH $, let $x \in  KH $. then $x = kh $ where $k, h \in  K, H $ so $x^{-1} = h^{-1} k^{-1} \in  HK $. Since
+$HK \leq G $ then $x \in  HK  $ so: 
+\[
+KH \subset HK
+\]
+\end{proof}
+\begin{proposition}[]
+if $HK \leq G $, then $HK $ is the smallest $SG $ of $G $ containing $H $ and $K $ thats so: 
+\[
+HK = \left\langle H \cup  K \right\rangle 
+\]
+\end{proposition}
+\begin{proof}
+Set 
+\begin{align*}
+  L &= \left\{ x_1^{k_1} \cdot \hdots \cdot x_n ^{k_n }: \quad 
+n \in \NN, x_{i} \in H \cup K, k_{i} = \pm 1\right\}  \\
+    &= \left\langle H \cup K \right\rangle 
+\end{align*}
+Let $x \in HK $, then $x = hk \in L $. so $HK \subset L $, since 
+$H, K \subset HK $. then $H \cup K \subset HK $, since $HK \leq G $, then 
+$\left\langle H \cup K \right\rangle \subset HK $ (see definition): 
+\[
+HK = \left\langle H \cup K \right\rangle 
+\]
+\end{proof}
+\section{Quotient Group}
+\exercise 
+Let $H \leq G $, $G $ is a group and let $x,y \in  G $. Show that:
+\begin{enumerate}
+\item $xH = H  \iff x \in H$ 
+  \item $x^{-1} y \in H \iff y \in xH $  
+    \item $H^{-1} = H  $ with $H^{-1} = \left\{ h^{-1}: \quad h \in  H \right\} $  
+\end{enumerate}
+\begin{proof}
+  \begin{align*}
+    x \in  H & \implies 
+    H \subset x H \\
+    h \in  H & \implies h 
+    = x x^{-1} h = x (x^{-1} h)  \in  x H
+  \end{align*}
+\end{proof}
+- Let $H \leq G $, define on $G $ the binary operations $R_{g} $ and $R_{d} $ by: 
+\[
+\forall x,y \in G: 
+\begin{cases}
+x \mathcal{R} _{g} y \iff x^{-1} y \in H \\
+x \mathcal{R} _{d} y \iff y x^{-1} \in H
+\end{cases}
+\]
+we can show that $\mathcal{R}_{g}  $ and $\mathcal{R} _{d} $  are 
+equivallence relations, (reflexive, symmetric, transition) let $x \in  G $. 
+that left class of $x $ by $\mathcal{R} _{g} $ is:
+\begin{align*}
+  \overline{x} &= 
+  \left\{ y \in G: \quad x \mathcal{R} _{g} y \right\} \\
+               &= 
+               \left\{ y \in  G: \quad x^{-1}y \in  H \right\} = 
+               \left\{ y \in  G: \quad y \in xH \right\} = xH
+\end{align*}
+Similarly, the right class of $x $ is: 
+\[
+\overline{x}^{d} = 
+\left\{ y \in  G: \quad x \mathcal{R} _{d} y \right\} = Hx
+\]
+\begin{center}
+  \textcolor{purple}{\underline{\textsc{Quotient of G by $\mathcal{R} _{g} $ and $\mathcal{R} _{d} $: }}}
+\end{center}
+By definition: 
+\[
+  \frac{G}{\mathcal{R} _{y}} = 
+  \left\{ 
+    \overline{x}^2 : \quad x \in G
+  \right\} = 
+  \left\{ 
+    x H: x \in G
+  \right\}
+    \overset{\text{ def } }{=}  
+    \left( 
+      \frac{G}{H}
+    \right)_{g}
+\]
+where: 
+\[
+  \frac{G}{\mathcal{R} _{d}} = 
+  \left\{ 
+    \overline{x}^{d}: x \in  G
+  \right\} = 
+  \left\{ Hx: \quad  x \in  G \right\} 
+  \overset{ \text{ def } }{ = }  
+  \left( 
+    \frac{G}{H}
+  \right)_{d}
+\]
+\begin{proposition}[]
+$\left( \frac{G}{H}\right)_{g }$ and 
+$\left( \frac{G}{H} \right)_{d}$ are partition 
+of $G$. 
+\end{proposition}
+\begin{proof}
+\begin{align*}
+  xH & \neq   \emptyset \quad (x = x \cdot  e \in  x H)  \\
+     \bigcup_{x \in  G}^{} x H &= G \\
+     x H \cap y H & \neq \emptyset  \implies xH = yH
+\end{align*}
+\end{proof}
+\begin{proposition}[]
+  \begin{enumerate}
+  \item 
+$\left( \frac{G}{H} \right)_{g} $ and $\left( \frac{G}{H}\right)_{d} $ are equipotent.
+\item $\forall x \in G: \quad  xH$ and $Hx $ are equipotent (in bijection).
+  \end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}
+\item Let 
+  \[
+  \begin{array}{cccc}
+        f : &  \left( \frac{G}{H} \right)_{g}  & \longrightarrow & \left( \frac{G}{H} \right)_{d} \\
+  
+             &  \overline{x} = x H  & \longmapsto     & f(xH)  = 
+             \left( x H \right)^{-1} = H x^{-1} \\ 
+  \end{array}
+  \]
+\end{enumerate}
+$f $ is well defined: 
+\begin{align*}
+  \overline{x} = \overline{y} & \implies 
+  f(\overline{x})  = 
+  f( \overline{y})  
+  \\
+  \overline{x} = \overline{y} & \implies 
+  x H = y H  \\
+                              & 
+                              \iff x^{-1} y H = H 
+                              \\
+                              & \implies  H y^{-1} x = H
+                              \\
+                              & \implies 
+                              H y^{-1} = H x^{-1} 
+                              \implies  
+                              f(\overline{x})  = f(\overline{y}) 
+
+\end{align*}
+\end{proof}
+% end of file
