@@ -1,0 +1,329 @@
+% lec3.tex 
+\lecture{3}{08:14 AM Thu, Oct 09 2025}{} 
+\begin{proposition}[]
+  \begin{itemize}
+    \item 
+$(\frac{G}{H}) _{d}$  and 
+$\left( \frac{G}{H} \right) _{d} $  are equipotent.
+\item  
+and for all $x \in   G: \quad xH $  and 
+$Hx $ are equipotent.
+  \end{itemize}
+\end{proposition}
+\begin{proof}
+\[
+\begin{array}{cccc}
+      f : &  (\frac{G}{H}) )_{g}  & \longrightarrow & 
+      \left( \frac{G}{H} \right)_{d}\\
+
+           &  xH  & \longmapsto     & Hx^{-1} \\ 
+\end{array}
+\]
+we have for all $x,y \in  G$: 
+\[
+xH = yH \implies 
+Hx^{-1} = Hy^{-1} \implies 
+f(xH) = f(yH) 
+\]
+so $f $ is well defined.
+\[
+f(xH) = f(yH)  \iff 
+Hx^{-1} = Hy^{-1} \implies 
+xH = yH \implies \text{ f injective }  
+\]
+Let $Hy \in  \left( \frac{G}{H} \right) _{d} $ then:
+\[
+f(y^{-1}H)  = Hy \text{ with }  
+y^{-1}H \in   
+\left( \frac{G}{H} \right) _{g}
+\]
+hence $f $ is surjective, thus 
+$f $ is bijective. Let 
+\[
+\begin{array}{cccc}
+      f : &  xH  & \longrightarrow & Hx \\
+
+           &  xh  & \longmapsto     & hx \\ 
+\end{array}
+\]
+we have that $f $ is bijective.
+\end{proof}
+\begin{theorem}[Lagrange Theorem]
+Let $G $ be a finite group and let 
+$H \leq G $, then $\left| H \right|  /  \left| G \right|   $ 
+\end{theorem}
+\begin{proof}
+Let $H \leq G $. then $\left( \frac{G}{H} \right) _{g} $ is a partition 
+of $G $, Let $\left( \frac{G}{H} \right) {g} = \left\{ x_1 H, \hdots , x_n H \right\} $ 
+for some $n \in  \NN $, so $G = \bigcup_{i=1}^{n} x_i H $. Since 
+$\left( \frac{G}{H} \right) _{g} $ is a partition of $G $, then: 
+\[
+\left| G \right|   = 
+\left| \bigcup_{}^{} x_{i}H \right|  = 
+\sum_{i=1}^{n} \left| x_{i} H \right|  
+\]
+we have $H $ and $x_{i} H $ are equipotent for all $i \in   \left\{ 1, \hdots , n \right\} $, 
+take 
+\[
+\begin{array}{cccc}
+      f : &  H  & \longrightarrow &  x_{i} H\\
+
+           &   h& \longmapsto     &  x_{i} h\\ 
+\end{array}
+\]
+so 
+\[
+\left| G \right|   = \sum_{i=1}^{n} \left| H \right|  = n \left| H \right|  
+\]
+hence $\left| H \right|  \ \left| G \right|   $ 
+\end{proof}
+\noindent
+\textcolor{purple}{
+\underline{
+\ding{43}Notation:
+}\\
+}
+$n = \left[ G:H \right] $ called the index of $H $ in $G $. if $\left| G \right|  <  +\infty  $,
+then \[
+\left[ G:H \right] = \frac{\left| G \right|  }{\left| H \right|  }
+\]
+For $G = \left( \mathbb{Z}, + \right)  $ and $H = n \mathbb{Z}$ where $n \in  \NN $, we have: 
+\[
+\left[ G:H \right] = \left| \left( \frac{G}{H} \right)  \right|  = n
+\]
+\begin{corollary}[]
+Every finite group $G $ of prime order is cyclic spanned any element $x \in   G \backslash \left\{ e \right\} $ 
+\end{corollary}
+\begin{proof}
+Let $x \in  G \backslash  \left\{  e \right\} $. By lagrange theorem we have 
+$\left| \left\langle x \right\rangle  \right|  \backslash  \left| G \right|  = p $. 
+so $\left\langle x \right\rangle = \left\{ e \right\} $ or $G = \left\langle x \right\rangle  $. 
+since $ x \neq e $, then $\left\langle x \right\rangle \neq \left\{ e \right\} $. So $G = \left\langle x \right\rangle  $ 
+\end{proof}
+\noindent
+\textcolor{red}{
+\underline{
+\ding{46}Remark:
+}
+}\\
+The reciprical of this result is not true. we can have a cyclic group with a non prime order, 
+\[
+\frac{\mathbb{Z}}{6 \mathbb{Z}} = 
+\left\langle \overline{1} \right\rangle =
+\left\langle \overline{5} \right\rangle 
+\]
+is cyclic and $\left| \frac{\mathbb{Z}}{6 \mathbb{Z}} \right|  = 6 $ not prime.
+\subsection{Normal Subgroups}
+\begin{definition}[]
+Let $H \leq G $. we say that $H $ is a normal group of $G $ if: 
+\[
+\forall x \in   G: \quad xH = Hx 
+\quad \quad \text{(denoted $H \lhd G $)}  
+\]
+\end{definition}
+\noindent
+\textcolor{red}{
+\underline{
+\ding{46}Remark:
+}
+}\\
+If $G $ is abelian, then any subgroup of $G $ is normal
+\begin{proposition}[]
+Let $H \leq G $. then the following statments are equivallent:
+\begin{itemize}
+  \item[\ding{172}] $\forall x \in   G: \quad x H x^{-1} = H $ 
+  \item[\ding{173}] $\forall x \in  G: \quad x H x^{-1} \subset H $ 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Exercise
+\end{proof}
+% \section{Quotient Group}
+Let $G $ be a group and $(H \lhd  G)$. then:
+\[
+\left( \frac{G}{H} \right) _{g} = \left( \frac{G}{H} \right) _{d} \overset{\text{ def }  }{=} 
+\frac{G}{H}
+\]
+we equip $\frac{G}{H} $ by the binary operation, defined:
+\[
+\forall x,y \in   G: \quad (xH) \cdot  (yH) = \overline{x}\cdot \overline{y}= \overline{xy}=
+\left( xy \right) \cdot H
+\]
+\begin{theorem}[]
+$\left( \frac{G}{H}, \cdot  \right)  $ is a group called the quotient group of $G $ by 
+$H $ 
+\end{theorem}
+\begin{proof}
+  \begin{itemize}
+    \item[\ding{49}] Associativity
+    \item[\ding{49}] The neutral element of $\left( \frac{G}{H} \right)$ is $H = \overline{e} = e H $ 
+    \item[\ding{49}] for all $\overline{x}\in   \frac{G}{H}: \quad \overline{x}^{-1}= \overline{x^{-1}}= 
+      \left( x H \right) ^{-1}$ 
+  \end{itemize}
+\end{proof}
+\section{Group Morphism}
+\begin{definition}[]
+Let $(G, \cdot ) $ and $(G', \mathcal{T} )  $ be two groups. A map
+$ f : G \longrightarrow G' $ is a group morphism if for all $x,y \in  G $ we have:
+\[
+f(x \cdot y) = f(x) \mathcal{T} f(y) 
+\]
+\end{definition}
+\begin{proposition}[]
+Let $ f : G \longrightarrow G' $ a Group morphism, and $e, e' $ are
+the neutral elements of $G $ and $G' $ resp. Then:
+\begin{itemize}
+  \item[\ding{172}] $f(e)  = e' $ 
+  \item[\ding{173}] $\forall x \in   G: \quad f(x^{-1}) = \left[ f(x)  \right]^{-1}  $ 
+  \item[\ding{174}] $\forall x \in G, \quad \forall n \in  \mathbb{Z}: \quad 
+    f(x^n ) = \left[ f(x)  \right]^n $ 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+  \begin{enumerate}
+    \item[\fbox{1}]
+  \ding{50} $x = y = e \implies  f(e)  = f(e)  f(e) $ 
+\item[\fbox{2}] \ding{50}
+      $y = x^{-1} \implies e' = f(x) f(x^{-1})  $ 
+    \item[\fbox{3}] \ding{50} use induction
+  \end{enumerate}
+\end{proof}
+\begin{example}
+Let $H \lhd G $, then: 
+\[
+\begin{array}{cccc}
+      i : &  H  & \longrightarrow & G \\
+
+           &  h  & \longmapsto     & h \\ 
+\end{array}
+\]
+and \[
+\begin{array}{cccc}
+      s : &  G  & \longrightarrow & \frac{G}{H} \\
+
+           &  x  & \longmapsto     & \overline{x} = 
+           xH\\ 
+\end{array}
+\]
+are group morphism called injective and surjective, resp.
+\end{example}
+\subsection{Kernel-Image}
+Let $ f : G \longrightarrow G'$, The kernel of $f $ 
+is: 
+\[
+  \fbox{ 
+    $
+  \text{Ker}(f) =
+  \left\{ x \in   G: \quad 
+  f(x)  = e' \right\} = 
+  f^{-1}(\left\{ e' \right\}) 
+  $
+  }
+\]
+The image of $f $ is: 
+\[
+  \fbox{ 
+    $
+  \text{Im}(f)   = 
+  \left\{ f(x): \quad x \in  G \right\} = f(G) 
+  $
+  }
+\]
+\begin{proposition}[]
+Let $ f : G \longrightarrow G' $ be a 
+Group morphish, then:
+\begin{itemize}
+  \item [\ding{172}] If $H \leq G $, then
+    $f(H)  \leq G' $ 
+  \item [\ding{173}] $H ' \leq G ' $, then 
+    $f^{-1}(H')  \leq  G $ 
+\end{itemize}
+so 
+\[
+\text{Im}  (f) = f(G)  \leq  G' 
+\]
+and 
+\[
+f^{-1}( \left\{ e' \right\})  = 
+\text{Ker}  (f)  \leq G
+\]
+\end{proposition}
+\begin{proposition}[]
+Let $ f : G \longrightarrow G' $ be a group
+morphism, then: 
+\begin{itemize}
+  \item [\ding{172}] $f $ injective $\iff  $ 
+    $\text{Ker}  (f)  = \left\{ e \right\} $ 
+  \item [\ding{173}] $f $ surjective $\iff  $ 
+    $\text{Im}  (f) = G'  $ 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+  Exercise \tt (you know it won't happen) \ding{44} \normalfont
+\end{proof}
+\begin{proposition}[]
+Let $H \leq G $, then: 
+\[
+H \lhd G \iff \exists G' \text{ a group and GM $ f : G \longrightarrow G'$ such that: $H = \text{Ker}  (f)  $ }  
+\]
+\end{proposition}
+\begin{proof}
+  \[
+    ( \impliedby  ) 
+  \]
+  
+  suppose that $\exists G' $ a group, and $ f : G \longrightarrow G' $ a group morphism such that $H = \text{Ker}  (f)$ 
+Let $x \in  G $, and let $y = x gx^{-1} \in  x \text{Ker}  (f) x^{-1} $ , hence: 
+\begin{align*}
+  f(y)  
+  &= 
+  f(x) f(g) (x^{-1})  \\
+  &= 
+  f(x) f(x^{-1})  \\
+  &= e' 
+\end{align*}
+so $y \in   \text{Ker}  (f)  $. look at the hand below
+\[
+  \text{\ding{43} }  x \text{Ker} (f) x^{-1} \subset 
+  \text{Ker}(f) 
+\]
+Therefore $H = \text{Ker}  (f) \lhd G $.
+\[
+\left( \implies  \right) 
+\]
+Let $H \lhd  G$, and let \[
+\begin{array}{cccc}
+      f : &  G  & \longrightarrow & \frac{G}{H} \\
+
+           &  x  & \longmapsto     & \overline{x} =
+           x H\\ 
+\end{array}
+\]
+we have $f $ is a group morphism, and $\text{Ker}  (f) = H$ 
+\end{proof}
+\begin{theorem}[First Theorem of Isomorphism]
+  Let $ f : G \longrightarrow G' $ be a group morphism,
+  then $\frac{G}{\text{Ker}  (f) } \sim \text{Im}  (f) $ 
+\end{theorem}
+\begin{proof}
+  \ding{45} Let \[
+\begin{array}{cccc}
+      \overset{\sim}{f}  : &  \frac{G}{\text{Ker}  (f) }  & \longrightarrow & \text{Im}  (f)  \\
+
+           &    \overline{x}& \longmapsto     & 
+           \overset{\sim}{f} ( \overline{x}) = 
+           f(x) \\ 
+\end{array}
+\]
+Let $\overline{x}, \overline{y} \in  \frac{G}{\text{Ker}  (f) } $ such that $\overline{x} = \overline{y}$, then 
+$x \text{Ker}  (f) = y \text{Ker}  (f)$, therefore 
+$x^{-1}y \in  \text{Ker}  (f) $, hence we can deduce
+\begin{align*}
+  f(x^{-1}y)  = e &\iff f(x) = f(y)  \\
+                  &\iff \overset{\sim}{f} (\overline{x})  = 
+  \overset{\sim}{f} (\overline{y}) 
+\end{align*}
+so $f $ is well defined and injective. 
+$f $ is surjective by construction
+\end{proof}
+%end of file
