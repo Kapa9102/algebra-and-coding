@@ -1,0 +1,206 @@
+% lec4.tex 
+\lecture{4}{08:22 AM Thu, Oct 16 2025}{} 
+\noindent
+\textcolor{purple}{
+\underline{
+\ding{43}Decomposition of a Group Morphsim:
+}
+}\\
+\begin{center}
+\begin{tikzcd}
+G \arrow[r, "f"] \arrow[d, "j"] & G'  &  \\
+  G/Ker(f)  \arrow[r, "\overset{\sim}{f}"]  
+                   & Im f \arrow[u, "i"']
+\end{tikzcd}
+\end{center}
+\begin{itemize}
+  \item Put $f = i \circ \overset{\sim}{f} \circ j $ 
+    \item if $f $ is isomorphism: $f = \overset{\sim}{f}.  $  
+      \item if $f $ is injective: $f = i \circ \overset{\sim}{f}  $ 
+        \item  if $f $ is surjective: $f = \overset{\sim}{f}  \circ  j $ .
+\end{itemize}
+where \[
+\begin{array}{cccc}
+      j : &  G  & \longrightarrow & \frac{G}{\text{Ker}  f} \\
+
+           &  x  & \longmapsto     & \overline{x} \\ 
+\end{array}
+\]
+\[
+\begin{array}{cccc}
+      i : &  \text{Im}  f  & \longrightarrow & G' \\
+
+           &  y  & \longmapsto     & y \\ 
+\end{array}
+\]
+
+\textcolor{red}{
+\underline{
+\ding{46}Remark:
+}
+}\\
+If $ f : G \longrightarrow G' $ isomoprhism, then $ f^{-1} : (G', *)  \longrightarrow (G, \cdot )  $ is also 
+isomoprhism.
+\begin{theorem}[]
+If $G \overset{f}{\simeq } G' $, then 
+\begin{itemize}
+  \item[\ding{172}] $G $ is Abelian group $\iff  $ $G' $ is Abelian group.
+  \item[\ding{173}] $G $ is cyclic $\iff  $ $G' $ is cyclic.
+  \item[\ding{174}] $\forall x \in  G: \quad (\left| x \right|   = n \iff \left| f(x)  \right|  ) = n $.
+  \item[\ding{175}] $G = \left\langle x \right\rangle \iff G' = \left\langle f(x)  \right\rangle  $ 
+\end{itemize}
+\end{theorem}
+\begin{proof}
+ \begin{itemize}
+ \item[\ding{50} \ding{172}]
+Let $a = f(x_1) , b = f(x_2)  \in  G'$. Then
+\begin{align*}
+  ab &= f(x_1) f(x_2) \\
+     &= f(x_1 x_2) \\
+     &= f(x_2 x_1) = f(x_2) f(x_1)  = ba
+\end{align*} 
+ \item[\ding{50} \ding{173}]
+   Let $G = \left\langle x \right\rangle $. let $y \in   G' $, so $\exists x_1 \in  G = \left\langle x \right\rangle : \quad 
+   y = f(x_1) $, so there exists $k \in  \mathbb{Z}: \quad y = f(x^{k}) = f(x) ^{k} \in   \left\langle f(x)  \right\rangle $, 
+   so $G' \subset \left\langle f(x)  \right\rangle $. Since $f(x) \in  G' $, then $\left\langle f(x)  \right\rangle \subset G' $.
+   So $G' = \left\langle f(x)  \right\rangle  $.
+ \item[\ding{50} \ding{174}] If $\left| x \right|  = n $, then $e = f(e)  = f(x^n ) = f(x) ^n  $. So  
+   $\left| f(x)  \right|  \backslash  n $. Let $ m = \left| f(x)  \right|  $, then $e = f(x) ^{m} = f(x^{m})  $, so 
+   $x^{m} = e $ (by injectivity). So $n \backslash  m $, hence $m = n. $ 
+ \end{itemize}
+\end{proof}
+\begin{proposition}[]
+If $G $ is cyclic, then
+\begin{itemize}
+  \item[\ding{172}] If $G $ is finite, then $G \simeq \frac{\mathbb{Z}}{n \mathbb{Z}} $ where $\left| G \right|  =  n $.
+  \item[\ding{173}] If $G $ is infinite, then $G \simeq \mathbb{Z}. $ 
+\end{itemize}
+\end{proposition}
+\begin{proof}
+Let 
+\[
+\begin{array}{cccc}
+      f : &  \mathbb{Z}  & \longrightarrow & G \\
+
+           &  k  & \longmapsto     & x^{k}, \\ 
+\end{array}
+\]
+where $ G = \left\langle x \right\rangle . $ By 1st isomorphism theorem, 
+we have $\frac{\mathbb{Z}}{\text{Ker}  f} \simeq G.$ 
+\begin{itemize}
+  \item[\ding{182}] If $f $ is injective, then $\text{Ker}  f = \left\{ 0 \right\}. $ So $Z' \simeq \frac{\mathbb{Z}}{\left\{ 0 \right\}} \simeq G $.
+ \item[\ding{183}] If $f $ is not injective, then $\text{Ker}  f = n \mathbb{Z} (\text{Ker}  f \leq \mathbb{Z})  $ for 
+   some $n \in  \NN $. So $\frac{\mathbb{Z}}{n \mathbb{Z}} \simeq G$.
+\end{itemize}
+\end{proof}
+\divider
+\ding{46} Let $A \subset G $, $G $ is a group. Define $C(A)  = \left\{ g \in  G| \quad \forall x \in   A: \quad gx = xg\right\} \leq G$. 
+\\
+\ding{46} Let $G $ be a group and $\mathcal{R}  $ be the binary relation defined by:
+\[
+\forall x, y \in  G: \quad x \mathcal{R} y \iff \exists g \in   G: \quad  y = gx g^{-1}
+\]
+we have $\mathcal{R}  $ is an equivallence relation and if $x \mathcal{R} y $ then $x $ and $y $ are conjugates. \\
+\ding{46} Define 
+\begin{align*}
+  \Omega (x)  &= \left\{ y \in  G| \quad x \mathcal{R} y\right\}   \\
+              &= \left\{ y \in  G| \quad y = gx^{-1}g, \quad g \in   G \right\}
+              \\
+              &= \left\{ g x g^{-1}| \quad g \in  G \right\}= \Omega _{x}.
+\end{align*}
+$\Omega _{x} $ is called the conjugacy class of $x $, also the orbit of $x $. \\
+\ding{50} Let $\frac{G}{\mathcal{R}} = \left\{ \Omega _{x}|x \in  G \right\} $. We have $\frac{G}{\mathcal{R} } $ is a partition
+of $G $. Suppose $\Omega _{x} \cap \Omega _{y} \neq \emptyset  $. So $\exists z \in   \Omega _{x} $ and $z \in   \Omega _{y} $. 
+so 
+\[
+\begin{cases}
+z = g x g ^{-1} \\
+z = g_1 y g_1^{-1}
+\end{cases}
+\quad 
+g, g_1 \in  G.
+\]
+So $x = g^{-1} g_1 y g_1^{-1}g = \left( g^{-1} g_1 \right) y \left( g^{-1}g_1 \right) ^{-1}\in   \Omega _{y}$. Then 
+$\Omega _{x} \subset \Omega _{y}.$
+\begin{theorem}[]
+  For all $x \in   G $, $\left| \Omega _{m} \right|  = \left[ G: C(x)  \right]= \left| \left( \frac{G}{C(x) } \right) _{g} \right|   $ 
+\end{theorem}
+\begin{proof}
+\[
+\begin{array}{cccc}
+      f : &  \Omega _{x}  & \longrightarrow & \frac{G}{C(x) } \\
+
+           &  gx^{-1}g  & \longmapsto     & \overline{g} = g C(x)  \\ 
+\end{array}
+\]
+$f $ is well defined.
+\begin{align*}
+  gxg^{-1} = g_1x g_1^{-1} & \implies 
+  (g_1^{-1}g) x (g_1^{-1}g) ^{-1} = x & \implies 
+  g_1^{-1} g \in  C(x)  \\ 
+                                      & \implies g \in  g_1 C(X)  \\
+                                      & \implies 
+                                      g C(x)  \subset g_1 C(x) 
+\end{align*}
+\underline{f injective:}
+\begin{align*}
+  f(gxg^{-1})  = f(g_1 x g_1^{-1})  & \implies 
+  gC(x)  = g_1C(x)  \\
+                                    & \implies 
+                                    g^{-1} g_1 C(x)  = C(x)  \\
+                                    & \implies g^{-1}g_1 \in  C(x)  \\
+                                    & \implies (g^{-1} g_1) x = x (g^{-1} g_1)  \\
+                                    & \implies g_1 x g_1^{-1} = gxg^{-1}
+\end{align*}
+\noindent
+\textcolor{red}{
+\underline{
+\ding{46}Remark:
+}
+}\\
+For all $x \in   G: \quad \left( \Omega _{x} = \left\{ x \right\} \iff x \in  Z(G)   \right) $. 
+\begin{align*}
+  x \in   Z(G)  & \iff C(x)  = G \\
+                & \iff \left| \left( \frac{G}{C(x) } \right) _{g} \right|   = 
+                \left| \frac{G}{G} \right|   = 1 \\
+                & \iff \left| \Omega _{x} \right|  = 1 \\
+                & \iff \Omega _{x} = \left\{ x \right\}.
+\end{align*}
+\end{proof}
+\begin{proposition}[]
+Let $G $ be a finite group of order $ n \geq 2 $. Then 
+\[
+\left| G \right|  \text{ is prime }  \iff  \left\{ e \right\} \text{ and }  G \text{ are the only SG of G.}  
+\]
+\end{proposition}
+\begin{proof}
+\ding{50} $ ( \implies )  $ use LT.\\
+\ding{50} $ ( \impliedby  )  $ 
+Let $\left| G \right|   = n = mp $, $p $ prime. Let $x \in   G \backslash  \left\{ e \right\} $, so $\left\langle x \right\rangle  = G $. Let $y = x^{m} \neq e $ since $p \geq 2 $, so $\left\langle y \right\rangle  = G. $ Then $\left| G \right|   = 
+\left| \left\langle y \right\rangle  \right|  = p = n$.
+\end{proof}
+\begin{theorem}[]
+Every group of order $p ^2  $ is abelian group, $p $ prime.
+\end{theorem}
+\begin{proof}
+Let $\left| G \right|   = p ^2$. By LT, $\left| Z(G)  \right| \backslash p ^2$. So $\left| Z(G)  \right| \in   
+\left\{ 1, p, p ^2  \right\}$. 
+\marginpar{Any group of order $p, p ^2 , \hdots  $, $Z(G)  $ cant be $\left\{ e \right\}$.  }
+\begin{itemize}
+  \item[\ding{182}] If $ \left| Z(G)  \right|   = 1$, then $Z(G)  = \left\{ e \right\} $.
+  \item[\ding{183}] If $\left| Z(G)  \right|  = p  $, then 
+    \begin{align*}
+      \left| \frac{G}{Z(G) } \right|   &= 
+      \frac{\left| G \right|  }{\left| Z(G)  \right|  } = p.
+    \end{align*}
+  \item[\ding{184}] So $\left| Z(G)  \right|  = p ^2 $. Then $G = Z(G)$. 
+\end{itemize}
+\end{proof}
+\begin{theorem}[Cauchy's Theorem]
+Let $G $ be a group of order $n $. Let $p $ be prime such that $p \backslash  n $. Then $\exists  x \in   G $ where 
+$\left| x \right|   = p $. 
+\end{theorem}
+\begin{proof}
+Let $\left| G \right|  =  np $, where $p $ prime. (to be continued ).
+\end{proof}
+% end of file
