@@ -1,0 +1,222 @@
+% lec5.tex 
+\chapter{Rings}
+\lecture{5}{08:06 AM Thu, Oct 23 2025}{} 
+$(A, +, \cdot ) $ is a ring if:
+\begin{itemize}
+  \item [\ding{172} ] $(A, +) $ is an abelian group.
+  \item [\ding{173} ] Is associative: $\forall x,y,z \in   A: (xy) z = x(yz) $  .
+  \item [\ding{174} ] Is distributive: $\forall x,y,z \in  A: $
+    \[
+    \begin{cases}
+      x(y+z)  &= xy + xz, \\
+      (x+y) z &= xz + yz.
+    \end{cases}
+    \]
+  \item [\ding{175} ] The unity element: $\exists e \in   A: x\cdot e = e \cdot x = x.$  
+  \item  [\ding{176} ] Is commutative: $\forall x,y \in   A: xy = yx.$ 
+\end{itemize}
+\begin{example}
+ \begin{itemize}
+   \item [\ding{172} ]
+$\mathbb{Q}, \mathbb{Z}, \RR , \CC $ are rings.
+\divider
+\item [\ding{174} ] \[
+    \mathbb{Z}[i] = \left\{ a+ib: a,b \in   \mathbb{Z}, i^2 =-1 \right\}
+\]
+\divider
+\item [\ding{174} ] $\RR [X]$.
+ \end{itemize}
+\end{example}
+\begin{definition}[]
+A subring $B$ of a ring $A$ is a subgroup of $(A, +) $ if 
+\[
+1 \in  B, \forall x,y \in   B: xy \in  B.
+\]
+\end{definition}
+\begin{definition}[Rings Product]
+  Let $A, B$ be two rings. We define the multiplication in $A \times B $ by:
+  \[
+  \forall (a,b), (c,d)  \in   A \times B: (a,b) (c,d)  = (ac,bd).
+  \]
+  Then $(A \times B, +, \cdot  ) $  is a ring with unity $(1_{A}, 1_{B}) $. 
+\end{definition}
+Let $A$ be a ring and $a,b \in  A$.
+ \begin{itemize}
+   \item[\ding{182} ] We say that $b$ divides $a$ ($a$ is a multiple of $b$) if
+     \[
+     \exists q \in  A: a = qb .
+     \]
+   \item [\ding{183} ] $a$ is invertible if $\exists a' \in  A: a a' = 1. $ 
+ \end{itemize}
+ The set of invertible elements of $A$ is denoted by $A^{*}$. \\
+ \noindent
+ \textcolor{purple}{
+ \underline{
+ \ding{46}Remark:
+ }
+ }\\
+ If $B$ is a subgroup of $A$, then an element $A$ of $B$ can be invertible in $A$ but not in $B$ $(2 \in  \mathbb{Z} \subset \mathbb{Q})$. for all $x \in   A:$ 
+ \[
+ x \cdot  0 = x ( 0 + 0)  = x \cdot  0 + x \cdot  0,
+ \]
+ thus,
+ \[
+  0 = x \cdot  0.
+ \]
+ \begin{proposition}[]
+ $(A ^{*}, \cdot ) $ is an abelian group with $1_{A}$ as neutral element.
+ \end{proposition}
+ \begin{proposition}[]
+   \[
+     (A \times B ) * = A^{*} \times B^{*} 
+   \]
+ \end{proposition}
+ \begin{proof}
+   We have:
+   \begin{align*}
+     (a,b) \in   (A \times B ) ^{*} & \iff 
+     \exists (x,y)  \in   A \times B: 
+     (a,b) (x,y)  = (ax, by) = (1_{A}, 1_{B}) .\\
+                                    & \iff a \in  A^{*} \wedge  b \in   B^{*}\\
+                                    & \iff (a,b) \in  A^{*} \times B^{*} .
+   \end{align*}
+ \end{proof}
+ \begin{definition}[]
+   A field $K$ is a ring with $K^{*} = K \backslash \left\{ 0 \right\}$ .
+ \end{definition}
+ \begin{example}
+ \begin{itemize}
+   \item [\ding{172} ] $\mathbb{Z}^{*} = \{ \pm 1\} \implies \mathbb{Z}$ is not a field.
+   \item[\ding{173} ] $(\RR \left[ X \right]) ^{*} = \RR ^{*}$.
+   \item [\ding{174} ] $(\mathbb{Z}[i]) ^{*} = \left\{ \pm 1, \pm i \right\}$.
+ \end{itemize}
+ \end{example}
+ \section{Ring Morphism}
+ \begin{definition}[]
+ $ f : A \longrightarrow B $ a ring morphism if:
+ \[
+ \forall x,y \in  A: \begin{cases}
+   f(x + y)  &= f(x)  + f(y),  \\
+   f(x \cdot  y) &= f(x)  f(y),  \\
+   f(1_{B}) &= 1_{B},
+ \end{cases}
+ \]
+ \end{definition}
+ \begin{definition}[Ideals]
+ An ideal $I \subset A$ is a subgroup $(I, +) $ of $(A, +) $, if
+ \[
+ \forall x \in  A, \forall a \in  I: xa \in  I.
+ \]
+ \end{definition}
+\noindent \ding{67} \textsc{Notation:} 
+$(a)  = a A = \left\{ ab: b \in  A \right\}$ is 
+an ideal of $A$ spanned by $a.$ 
+\begin{definition}[]
+$I$ is a principal ideal 
+of $A$ if $\exists  a \in  A$ such that 
+$I = (a)  = aA$.
+\end{definition}
+\begin{example}
+If $ f : A \longrightarrow B $ a ring morphism, then 
+\[
+\text{Ker}  (f)  = 
+\left\{ x \in   A: f(x)  = 0_{B} \right\} \text{ is an ideal of $A$ and $Im(f) $ is subring of $B$.}  
+\]
+\end{example}
+\begin{proposition}[]
+A ring $A$ is a field if and only if $\left\{ 0 \right\}$ and $A$ are the only ideals of $A$.
+\end{proposition}
+\begin{proof}
+  \[
+    ( \implies ) 
+  \]
+Let $I \neq \left\{ 0 \right\}$ be an ideal of $A$. Then there exists $a \in  I \backslash  \left\{ 0 \right\} 
+\subset A^{*}$. So $1 = a ^{-1} a \in  I $. Then for all $x \in   A: x = x \cdot  1 \in  I$, so $I = A.$ 
+\[
+  ( \impliedby ) 
+\]
+Let $a \in  A \backslash  \left\{ 0 \right\}$. Then $(a)  = A$, since $0 \neq a \in  (a) $. Then 
+$1 = ab, b \in  A$. So $a \in  A^{*}$. So $A^{*} = A \backslash  \left\{ 0 \right\}$ so $A$ is a field.
+\end{proof}
+\noindent
+\textcolor{larratBicep!50!brown}{
+\underline{
+\ding{46}Remark:
+}
+}\\
+$ f : K \longrightarrow B $ a ring morphism with $K$ is a field. Since $\text{Ker}  (f)  = \left\{ 0 \right\}$ (Ker(f) 
+$\neq \left\{ 0 \right\}$), then $f$ is injective, Im(f) is a field.
+\section{Quotient Ring}
+Let $A$ be a ring and $I$ not included in $A$ 
+an ideal, since $(I , +) \rhol (A, +) $, then 
+$\frac{A}{I}$ is an abelian group, 
+we define $\frac{A}{I}$ the binary operation, by:
+\[
+\forall \overline{x}, \overline{y}\in  
+\frac{A}{I}: \overline{x} \cdot \overline{y} = 
+\overline{xy}.
+\]
+Then binary operation is well defined. Indeed:
+\[
+\begin{cases}
+\overline{x} = \overline{x'} \\
+\overline{y} = \overline{y'}
+\end{cases}
+ \implies 
+ \begin{cases}
+ x - x' \in  I \\
+ y - y' \in  I
+ \end{cases}
+ \implies 
+ \begin{cases}
+ x' = x + a, a \in  I \\
+ y' = y + b, b \in  I.
+ \end{cases}
+\]
+which implies that
+\[
+\overline{x'y'} \implies 
+\overline{x'} \overline{y'} = 
+\overline{x + a} \cdot \overline{y + a }= 
+\overline{x}\cdot \overline{y} = \overline{xy}.
+\]
+\begin{proposition}[]
+$(\frac{A}{I}, +, \cdot ) $ is a ring called the quotient ring of $A$ by $I$.
+\end{proposition}
+\begin{proof}
+\[
+  (\overline{x} \overline{y})  \overline{z} = 
+  (\overline{xy}) \overline{z} = 
+  \overline{(xy) z} = 
+  \overline{x(yz) } = 
+  \overline{x}(\overline{yz}) = \overline{x}
+  (\overline{y} \overline{z}) 
+\]
+\end{proof}
+\begin{theorem}[First theorem of isomorphism (ring version)]
+Let $ f : A \longrightarrow B $ be a ring morphism. Then
+\[
+\frac{A}{\text{Ker(f)}  } \simeq \text{Im(f)}  
+\]
+\end{theorem}
+\begin{proof}
+  Let 
+  \[
+  \begin{array}{cccc}
+        \overset{\sim}{f}  : &  \frac{A}{\text{Ker}(f)  }  & \longrightarrow & \text{Im}  (f)  \\
+  
+             &  \overline{x}  & \longmapsto     & \overset{\sim}{f}(\overline{x})  = f(x) . \\ 
+  \end{array}
+  \]
+  \begin{align*}
+    \overline{x} =\overline{y} &= 
+    x - y \in  \text{Ker(f)}   \\
+                               & \iff f(x - y) = 0 
+                               \\
+                               & \iff  f(x)  = f(y)  \\
+                               & \iff \overset{\sim}{f} (\overline{x}) = 
+                               \overset{\sim}{f} ()\overline{y}  
+                               \iff  \overset{\sim}{f}  \text{ is well defined and injective.}  
+  \end{align*}
+\end{proof}
+% end of file
