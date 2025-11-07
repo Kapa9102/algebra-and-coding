@@ -4,6 +4,7 @@
 \usepackage{etoolbox}
 \usepackage{xifthen}
 \usepackage{mathrsfs, graphics}
+\usepackage{textcomp}
 \usepackage{tikz}
 \usepackage{tikzsymbols}
 \usepackage{marginnote, xcolor}
@@ -135,7 +136,7 @@
 
 \newtcolorbox[auto counter, number within=section]{theorem}[1][]           
 {title=Theorem \thetcbcounter\maybep{#1}: ,drop lifted shadow=black,enhanced,colframe=blue!50!black,colback=blue!25!denisBicep!50,attach title to upper = {\ },
-coltitle=blue!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,
+coltitle=blue!50!black,fonttitle=\upshape\bfseries,
 sharp corners = all,boxrule = 0pt,
 underlay = {\draw[step=5mm,
   draw = blue!25!denisBicep!60] (interior.north east)
@@ -171,7 +172,7 @@ underlay = {
   \draw[larratBicep!35] ([yshift = -0.35cm]interior.north west) -- ([xshift = 0.45cm]interior.north west);
   \draw[larratBicep!35] ([xshift = 0.45cm]interior.north west) -- (interior.north west);
 },
-coltitle=red!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,
+coltitle=red!50!black,fonttitle=\upshape\bfseries,
 sharp corners = all,boxrule = 0pt,
 underlay = {\draw[step=5mm,
   draw = larratBicep!45] (interior.north east)
@@ -180,7 +181,7 @@ grid (interior.south west);}
 
 \newtcolorbox[auto counter, number within=section]{definition}[1][]           
 {title=Definition \thetcbcounter\maybep{#1}: ,drop lifted shadow=black,enhanced,colframe=red!25,colback=red!25!larratBicep!50,attach title to upper = {\ },
-coltitle=red!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,
+coltitle=red!50!black,fonttitle=\upshape\bfseries,
 sharp corners = all,boxrule = 0pt,
 underlay = {\draw[step=5mm,
   draw = red!25!larratBicep!60] (interior.north east)
@@ -203,7 +204,7 @@ grid (interior.south west);
 \usetikzlibrary{shadows}
 \newtcolorbox[use counter from=theorem]{corollary}[1][]           
 {title=Corollary \thetcbcounter\maybep{#1}: ,drop lifted shadow=black,enhanced,colframe=green!35!black!15,colback=green!35!black!15!denisBicep!45,attach title to upper = {\ },
-coltitle=green!25!black,fonttitle=\upshape\bfseries,fontupper=\itshape,
+coltitle=green!25!black,fonttitle=\upshape\bfseries,
 sharp corners = all,boxrule = 0pt,
 underlay = {\draw[step=5mm,
   draw = green!40!black!30!denisBicep!50] (interior.north east)
@@ -226,7 +227,7 @@ grid (interior.south west);
 
 \newtcolorbox[auto counter]{example}
 {title=Example: ,drop fuzzy shadow=black,enhanced,colframe=gray!50!black,colback=gray!35,attach title to upper = {\ },
-coltitle=gray!50!black,fonttitle=\upshape\bfseries,fontupper=\itshape,
+coltitle=gray!50!black,fonttitle=\upshape\bfseries,
 sharp corners = all,boxrule = 0pt,
 underlay = {\draw[step=5mm,
   draw = gray!40!black!30] (interior.north east)
@@ -309,6 +310,7 @@ grid (interior.south west);}
 \newcommand{\KN}{\mathbb{K}^n}
 
 \newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
 
 \newcommand{\PS}{\mathcal{P}}
 \newcommand{\AS}{\mathcal{E}}

@@ -1,0 +1,268 @@
+% lec6.tex 
+\lecture{6}{08:05 AM Thu, Nov 06 2025}{} 
+\begin{theorem}[Chinese remainder theorem]
+  Let $p,q \in  \NN, (p, q) = 1$. Then $\mathbb{Z}_{pq}$ is isomorphic to $\mathbb{Z}_{p} \times \mathbb{Z}_{q} $.
+\end{theorem}
+\begin{proof}
+Let \[
+\begin{array}{cccc}
+      f : &  \mathbb{Z}  & \longrightarrow & \mathbb{Z}_{p} \times 
+      \mathbb{Z}q\\
+
+           &  k  & \longmapsto     & (\overline{k}^{p}, \overline{k}^{q})  \\ 
+\end{array}
+\]
+We have $f$ is a RM, also,
+\begin{align*}
+\text{Ker}  (f) 
+&= 
+\left\{ k \in   \mathbb{Z}: \overline{k}^{p} = \overline{0}^{p}
+\text{ and }  \overline{k}^{q}= \overline{0}^{q}\right\} \\
+&= 
+\left\{ k \in   \ZZ: 
+k \in   p\ZZ \cap q \ZZ\right\} \\
+&= \text{lcm} (p , q)\ZZ = pq \ZZ.
+\end{align*}
+Hence the kernel of $f$ is $\left\{ \overline{0}^{pq} \right\}$. Then 
+by first isomorphism theorem, 
+\[
+\ZZ_{pq} \text{ is isomorphic to } \Img (f)  \subset 
+\ZZ_{p} \times \ZZ_{q}.
+\]
+so $pq = \left| pq \ZZ \right|  = \left| \Img (f)  \right|  =
+\left| \ZZ_{p} \times \ZZ_{q}  \right|  $. Then 
+$\ZZ_{pq}$ is isomorphic to $\Img (f) \times \ZZ_{p} \times \ZZ_{q}.$   
+\end{proof}
+\begin{proposition}[]
+Let $C_{p}$ and $C_{q}$ be two cyclic groups. Then 
+$C_{p} \times C_{q} $ is cyclic if and only if 
+$(p, q) = 1.$ 
+\end{proposition}
+\begin{proof}
+  \ding{50} $( \impliedby  ) $: $(p, q)=1 \iff C_{p} \times C_{q} $ is 
+  isomorphic to $Z_{p} \times Z_{q}$ which is isomorphic to 
+  $Z_{pq}$. Thus, its cyclic. \\\ding{50}$( \implies ) $: 
+  $d = (p, q)  > 1$. Then $\text{lcm}  (p, q) = a < pq$. Let
+  $(\overline{x}^{p}, \overline{x}^{q}) \in  \CC _{p} \times C_{q} $ 
+  which is isomorphic to $Z_{p}\times \ZZ_{q}$. Then 
+  $(\overline{x}^{p}, \overline{y}^{q}) = (\overline{ax}^{p}, 
+  \overline{ay}^{q}) = (\overline{0}^{p}, \overline{0}^{q}). $ So
+  $C_{p} \times C_{q} $ is not cyclic.
+\end{proof}
+\divider
+\subsection{Euler function}
+\noindent\ding{43}~\textbf{Euler function:} for $n \in  \NN$, define the function $\FF$ by:
+\[
+\begin{array}{cccl}
+      \FF : &  \NN  & \longrightarrow & \NN \\
+
+           &  n  & \longmapsto     & \FF(n)  = 
+           \left| \left\{ 1 \leq k \leq n: (k, n)  = 1 \right\} \right|  \\ 
+\end{array}
+\]
+\ding{100}~\textbf{Properties. } If $p$ is prime, $\FF(p) = p -1$. 
+for all $r \in  \NN$, we have, 
+\[
+\FF( p ^r ) = 
+p ^{r} - p ^{r-1} = p ^{r-1} ( p - 1).
+\]
+If $n,m \in  \NN$ such that $(n, m) = 1$, then
+\[
+\FF(nm) = \FF(n)  \FF(m). 
+\]
+\begin{proof}
+  \begin{align*}
+    \FF(p ^r)  &= 
+  \left| \left\{ 1 \leq k \leq p ^{r} : (k, p ^{r}) = 1 \iff 
+  (k, p) = 1\right\} \right|  \\
+               &= 
+               p ^{r} - 
+               \left| \left\{ 1 \leq k \leq  p ^{r} : 
+               (k, p) = p\right\} \right|  \\
+               &= 
+               p ^{r} - p ^{r-1}
+  \end{align*}
+  We can use the chinese remainder theorem, 
+  \begin{align*}
+    (n, m)  & \implies  1 \implies 
+    \ZZ_{nm}\text{ is isomorphic }  
+    \ZZ_{n} \times \ZZ_{m}\\
+            & \implies  
+            (\ZZ_{nm})^{*} 
+            \text{ is isomorphic }
+            (\ZZ_{n} \times \ZZ_{m} ) ^{*} \\
+            & = \ZZ_{n}^{*}\times \ZZ_{m}^{*} 
+  \end{align*}
+  Alternative way, we have $\FF(nm) = \left| (\ZZ_{nm}) ^{*} \right| = 
+  \left| \ZZ_{n}^{*} \times \ZZ_{m} ^{*}  \right| = 
+  \left| \ZZ_{n}^{*} \right| \cdot  
+  \left| \ZZ_{m}^{* } \right| = \FF(n) \times \FF(m)$. 
+\end{proof}
+\noindent Let $n \geq 2$ (where $n \in  \NN$).\\
+\\
+\ding{95}~\textbf{Proposition. }
+\begin{itemize}
+  \item[\ding{172} ] 
+    Let $a \in  \ZZ$, if $(a, n) = 1$ then $a ^{\FF(n) } = 1
+    \left[ n \right]$.
+  \item[\ding{173} ] 
+    Every cyclic group of order $n$ has $\FF(n) $ generators.
+\end{itemize}
+\begin{proof}
+  \ding{50} \ding{172}. Let $a \in \ZZ$, and suppose that $(a, n) = 1$, that is; 
+\begin{align*}
+  (a, n)  = 1 
+  & \implies 
+  \exists \al, \bb \in  \ZZ: a \al + \bb n = 1, \\
+  & \implies 
+  \overline{\al} \overline{a} = \overline{1} \in  
+  \ZZ_{n}, 
+  \\
+  & \implies 
+  \overline{a} \in  
+  \left( \ZZ_{n} \right) ^{*},
+  \\
+  & \implies 
+  \overline{a}^{\FF(n) } = 
+  \overline{1} \quad \left( \left| \ZZ_{n}^{*} \right| =
+  \FF(n) \right), \\
+  & \implies 
+  a ^{\FF(n) } = 
+  1 \left[  n \right].
+\end{align*}
+\ding{50} \ding{173}. Left as an exercise \textbf{\ding{106}}. This finishes
+the proof, as required.
+\end{proof}
+\divider
+We denote the finite field $\ZZ_{p} := \mathbb{F}_{p}.$ \\
+\begin{proposition}[]
+Let $n \geq 2$ (where $
+n \in  \NN$). Then $\ZZ_{n}$ is a field if and only if 
+$n$ is a prime.
+\end{proposition}
+\begin{proof}
+If $n$ is prime, then $\left| \ZZ_{n} \right|  ^{*} = 
+\FF(n)  = n-1.$ So $\ZZ_n$ is a field. Suppose $\ZZ_n $ is a 
+field. Let $1 \leq  d < n$ such that $d|n$. So there exists 
+$q \in  \NN$ such that $ n = q d.$ Then $\overline{q} \overline{d}= 
+\overline{0} \in  \ZZ_{n}$; Since $d \neq 0$, then 
+$\overline{d} \in  (\ZZ_n ) ^{*}.$  So $\overline{q} = \overline{0}$, thus
+$q = n$ and $d= 1$. Hence $n$ is prime.
+\end{proof}
+\begin{theorem}[Fermat's Theorem]
+  Let $p$ be prime. Let also $a \in  \ZZ$, then 
+  \[
+    a ^{p} = a \left[ p \right].
+  \]
+\end{theorem}
+\begin{proof}
+  Since $\ZZ_{p}$ is a field, then for all $a \in  \ZZ \backslash  p \ZZ$, 
+  we have:
+\end{proof}
+\[
+\overline{a}^{p-1} = \overline{1} \in  
+\left( \ZZ_{p} \right) ^{*} \implies 
+\overline{a}^{p} = \overline{a}.
+\]
+If $a \in  p\ZZ$, then $\overline{a}^{p} = \overline{0}^{p} = \overline{0}
+= \overline{a}$. Thus
+\[
+  a ^{p} = a \left[ p \right], \quad ( 
+  \forall a \in  \ZZ).
+\]
+\begin{definition}[]
+Let $R$ be a ring. We say that $R$ is an integral domain 
+(ID) if:
+\begin{itemize}
+  \item[\ding{172} ] $R$ is
+    commutative.
+  \item[\ding{173} ] $R$ is
+    unity.
+  \item[\ding{174} ] $R$ has 
+    no zero divisors; That is, for $a, b \in  R$:
+    \[
+    ab = 0 \implies a = 0 \text{ or }  b = 0.
+    \]
+\end{itemize}
+\end{definition}
+\section{Principal ring}
+\begin{definition}[]
+A ring $R$ is a principal ring if $R$ is an integral domain, and
+every deal of $R$ is principal. That is; for all $I \subset R$, 
+if $I$ is an ideal, then:
+\[
+I = \left( a \right)  = a R, \quad (a \in  R).
+\]
+\end{definition}
+\begin{example}
+  \begin{itemize}
+    \item [\ding{172} ] $\ZZ$ is a principal ring 
+      since $n \ZZ = (n)$ (where $n \in  \NN$), which are
+      the ideals of $\ZZ.$ 
+    \item [\ding{173} ] If $\KK$ is a field, then 
+      $\KK \left[ X \right]$ is a principal ring. 
+      Hint: (Use 
+      the Euclidean division for the proof).\normalfont.
+    \item [\ding{174} ] 
+      The ring $\ZZ\left[ X \right]$ is not a principal ideal 
+      since $(2, X) $ is not a principal ideal of $\ZZ \left[ X \right]$. 
+      $\left( (a,b) = a R + b R \right) $.
+  \end{itemize}
+\end{example}
+\begin{definition}[]
+Let $a, b \in  R$. Suppose that $a = b c$ for some $c \in  R^{*}$,
+then we say that $a$ and $b$ are associates.
+\end{definition}
+\noindent\textbf{Remark. }The relation ($a$ and $b$ are associates where $a, b \in  R$)
+is an equivalence relation on $R$.
+\begin{proposition}[]
+  Let $R$ be a ring. Suppose that $R$ is an integral domain, then
+  \[
+    a R \subset b R \iff b \backslash  a, \quad 
+    (a, b \in  R),
+  \]
+  and
+  \[
+    a R = b R \iff a = b c, \quad (c \in  R).
+  \]
+\end{proposition}
+\subsection{Irreducible and prime elements}
+\begin{definition}[]
+Let $R$ be a ring. Suppose that $R$ is an integral domain, an element
+$a \in  R \backslash  \left\{ 0 \right\}$ is said to be 
+irreducible if $ a \notin  R^{*}$ (not invertible), and 
+\[
+a = uv \implies u \in  R ^{*} \text{ or }  v \in  R^{*},
+\quad (u, v \in  R).
+\]
+\end{definition}
+\begin{example}
+\begin{itemize}
+  \item The primes of $\ZZ$ are irreducible. Let $p$ be a prime number, and 
+    let also $a, b \in  \ZZ$ such that
+    \begin{align*}
+    p = ab &\implies  a = p \text{ or }  b = p \\
+           & \implies 
+           b = 1 \in  \ZZ^{*} \text{ or }  
+           a = 1 \in  \ZZ^{*}
+    \end{align*}
+   \item Let $\KK$ be a field. A polynomial $P \in  \KK\left[ X \right]$  of degree $n$ (where $n \in  \NN_0$) is irreducible if and only if 
+     $n \geq 1$ and the only divisions are those of degree 
+     $0$ or $n$. 
+    \item In $\ZZ\left[ i \right]$, we have 
+      $\left( 3 + 2i \right) \left( 3 - 2i \right) = 13$. 
+      $\left( \ZZ\left[ i \right]^{*} = \left\{ \pm 1, \pm i \right\}  \right) $.
+      So $13$ is not irreducible in $\ZZ\left[ i \right]$, even though 
+      $13$ is irreducible in $\ZZ.$  
+\end{itemize}
+\end{example}
+\begin{definition}[]
+Let $R$ be a ring. Suppose that $R$ is an integral domain and 
+let $p \in R$ such that $p \notin  R^{*} \cup \left\{ 0 \right\}$. If 
+\[
+p|ab \implies 
+p|a \text{ or }  p|b, \quad  \left( a, b \in  R \right).
+\]
+Then we say that $p$ is prime. 
+\end{definition}
+% end of file
